@@ -5,11 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/roleta.css" />
   </head>
   <body>
     <main>
       <ul style="display: none">
+        <li>Peterson</li>
         <li>R$ 50</li>
         <li>R$ 100</li>
         <li>R$ 700</li>
@@ -19,46 +21,58 @@
         <li>R$ 1000</li>
         <li>R$ 700</li>
         <li>R$ 100</li>
-        <li>R$ 500</li>
-        <li>R$250</li>
+        <li>R$ 250</li>
         <li>R$ 1000</li>
       </ul>
 
       <div class="wrapper">
-        <svg viewBox="0 0 708 708">
-          <style>
-            text {
-              font-size: 34.93px;
-              font-family: Montserrat-Bold, Montserrat;
-              font-weight: 700;
-              fill: #fff;
-            }
+        <img
+          class="base"
+          alt="Base da roleta"
+          width="400"
+          height="400"
+          src="./assets/images/Base.png"
+        />
+        <div id="resposta">
+          <svg viewBox="0 0 708 708">
+            <style>
+              text {
+                font-size: 34.93px;
+                font-family: Montserrat-Bold, Montserrat;
+                font-weight: 700;
+                fill: #fff;
+              }
 
-            text:nth-child(odd) {
-              fill: #f00;
-            }
-          </style>
+              text:nth-child(odd) {
+                fill: #f00;
+              }
+            </style>
 
-          <image width="708" height="708" href="./assets/Escudo.png"></image>
-          <text></text>
-          <text></text>
-          <text></text>
-          <text></text>
-          <text></text>
-          <text></text>
-          <text></text>
-          <text></text>
-          <text></text>
-          <text></text>
-          <text></text>
-          <text></text>
-        </svg>
+            <image
+              width="708"
+              height="708"
+              href="./assets/images/Escudo.png"
+            ></image>
+            <text></text>
+            <text></text>
+            <text></text>
+            <text></text>
+            <text></text>
+            <text></text>
+            <text></text>
+            <text></text>
+            <text></text>
+            <text></text>
+            <text></text>
+            <text></text>
+          </svg>
+        </div>
         <img
           class="borda"
           alt="Borda da roleta"
           width="400"
           height="400"
-          src="./assets/Borda.png"
+          src="./assets/images/Borda.png"
         />
       </div>
 
@@ -69,17 +83,27 @@
       const values = [...document.querySelectorAll("li")];
       const texts = [...document.querySelectorAll("svg text")];
       const $svg = document.querySelector("svg");
+      const $resposta = document.querySelector("#resposta");
+      const DEG = 30;
 
       values.forEach((li, index) => {
         texts[index].innerHTML = li.innerText;
       });
 
+      function escolherResultado(index) {
+        $resposta.style.transform = `rotate(-${index * DEG}deg)`;
+      }
+
       function rodarRoleta() {
         $svg.classList.add("loading");
 
         setTimeout(() => {
+          escolherResultado(0);
+        }, 2000);
+
+        setTimeout(() => {
           $svg.classList.remove("loading");
-        }, 15500);
+        }, 10500);
       }
     </script>
   </body>

@@ -1,54 +1,33 @@
-@keyframes spinner {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(14400deg);
-  }
-}
-
-button {
-  cursor: pointer;
-  border: none;
-  background-color: #06d6a0;
-  border-radius: 8px;
-  margin-top: 32px;
-  color: #fff;
-  padding: 12px 24px;
-}
-
 svg.loading {
-  animation: spinner 15s cubic-bezier(0.46, 0.01, 0, 1);
-}
-
-svg {
-  width: 400px;
-  max-width: 100%;
+  animation: spinner 10s cubic-bezier(0.46, 0.01, 0, 1);
 }
 
 .wrapper {
+  margin-bottom: 100px;
   position: relative;
 }
 
+.base,
 .borda {
   position: absolute;
-  top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
   object-fit: contain;
   pointer-events: none;
+  width: 100%;
 }
 
-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 100vw;
-  height: 100vh;
+.borda {
+  height: 100%;
+  top: 0;
+  z-index: 2;
 }
 
+.base {
+  bottom: 0;
+  transform: translateY(60%);
+}
+
+/* Posicionamento dos valores  */
 text:nth-child(3) {
   transform: translate(367px, 267px) rotate(-90deg);
 }
