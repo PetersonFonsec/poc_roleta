@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main>
+      <ul style="display: none">
+        <li>R$ 50</li>
+        <li>R$ 100</li>
+        <li>R$ 700</li>
+        <li>R$ 250</li>
+        <li>R$ 500</li>
+        <li>R$ 50</li>
+        <li>R$ 1000</li>
+        <li>R$ 700</li>
+        <li>R$ 100</li>
+        <li>R$ 500</li>
+        <li>R$250</li>
+        <li>R$ 1000</li>
+      </ul>
+
+      <div class="wrapper">
+        <svg viewBox="0 0 708 708">
+          <style>
+            text {
+              font-size: 34.93px;
+              font-family: Montserrat-Bold, Montserrat;
+              font-weight: 700;
+              fill: #fff;
+            }
+
+            text:nth-child(odd) {
+              fill: #f00;
+            }
+          </style>
+          <image width="708" height="708" href="./assets/Roleta.png"></image>
+          <text></text>
+          <text></text>
+          <text></text>
+          <text></text>
+          <text></text>
+          <text></text>
+          <text></text>
+          <text></text>
+          <text></text>
+          <text></text>
+          <text></text>
+          <text></text>
+        </svg>
+      </div>
+
+      <button onclick="rodarRoleta()">rode a roleta</button>
+    </main>
+
+    <script>
+      const values = [...document.querySelectorAll("li")];
+      const texts = [...document.querySelectorAll("svg text")];
+      const $svg = document.querySelector("svg");
+
+      values.forEach((li, index) => {
+        texts[index].innerHTML = li.innerText;
+      });
+
+      function rodarRoleta() {
+        $svg.classList.add("loading");
+
+        setTimeout(() => {
+          $svg.classList.remove("loading");
+        }, 10000);
+      }
+    </script>
+  </body>
+</html>

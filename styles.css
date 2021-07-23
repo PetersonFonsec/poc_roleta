@@ -1,0 +1,72 @@
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(14400deg);
+  }
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background-color: #06d6a0;
+  border-radius: 8px;
+  margin-top: 32px;
+  color: #fff;
+  padding: 12px 24px;
+}
+
+svg.loading {
+  animation: spinner 15s cubic-bezier(0.89, 0.01, 0, 1);
+}
+
+svg {
+  width: 400px;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+
+text:nth-child(3) {
+  transform: translate(367px, 267px) rotate(-90deg);
+}
+text:nth-child(4) {
+  transform: translate(410px, 279px) rotate(-59.35deg);
+}
+text:nth-child(5) {
+  transform: translate(437px, 317px) rotate(-28.73deg);
+}
+text:nth-child(6) {
+  transform: translate(445.97px, 368.08px);
+}
+text:nth-child(7) {
+  transform: translate(433px, 414px) rotate(30.25deg);
+}
+text:nth-child(8) {
+  transform: translate(392px, 447px) rotate(59.27deg);
+}
+text:nth-child(9) {
+  transform: translate(343px, 451px) rotate(92.31deg);
+}
+text:nth-child(10) {
+  transform: translate(294px, 432px) rotate(120.65deg);
+}
+text:nth-child(11) {
+  transform: translate(265px, 390px) rotate(148.37deg);
+}
+text:nth-child(12) {
+  transform: matrix(-1, 0, 0.07, -1, 262, 341);
+}
+text:nth-child(13) {
+  transform: translate(284px, 298px) rotate(-149.35deg);
+}
+text:nth-child(14) {
+  transform: translate(320px, 270px) rotate(-121.63deg);
+}
